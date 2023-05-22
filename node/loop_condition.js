@@ -39,3 +39,18 @@ for(let i=input; i>0; i--){
      result*=i;
 }
 console.log(result);
+// factorial
+let r=1;
+let f=25;
+let g=15;
+let lcm=1;
+for(let i=r; i>0; i++){
+if(f%i==0 && g%i==0){
+console.log(i);
+}
+else{
+  
+}
+    lcm*=i;
+}
+console.log(lcm);

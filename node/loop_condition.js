@@ -31,7 +31,7 @@ for(let i=1;  i<=50; i++){
 
     }
 }
-// 
+// factorial
 let input=5;
 let result=1;
 for(let i=input; i>0; i--){
@@ -40,6 +40,7 @@ for(let i=input; i>0; i--){
 }
 console.log(result);
 // factorial
+//  Highest Common Factor
 let r=1;
 let f=25;
 let g=15;

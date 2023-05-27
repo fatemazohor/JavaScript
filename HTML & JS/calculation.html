@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculation</title>
+    <style>
+        input{
+            margin: 5px 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <label for="n1">Number1</label><br>
+    <input type="text" id="n1"><br>
+    <label for="n2">Number2</label><br>
+    <input type="text" id="n2">
+    <br>
+    <input type="button" value="+" id="add" onclick="add()">
+    <input type="button" value="-" id="subtract" onclick="subtract()">
+    <input type="button" value="*" id="multi" onclick="multi()">
+    <input type="button" value="/" id="divide" onclick="divide()">
+    <br>
+    
+    <p id="result"></p>
+
+    <script>
+        function add(){
+            let n1=document.getElementById('n1').value;
+            let n2=document.getElementById('n2').value;
+            let result= parseInt(n1)+parseInt(n2);
+
+            document.getElementById('result').innerHTML="Result= "+result;
+        }
+        function subtract(){
+            let n1=document.getElementById('n1').value;
+            let n2=document.getElementById('n2').value;
+            let result=n1-n2;
+
+            document.getElementById('result').innerHTML="Result= "+result;
+        }
+        function multi(){
+            let n1=document.getElementById('n1').value;
+            let n2=document.getElementById('n2').value;
+            let result=n1*n2;
+
+            document.getElementById('result').innerHTML="Result= "+result;
+        }
+        function divide(){
+            let n1=document.getElementById('n1').value;
+            let n2=document.getElementById('n2').value;
+            let result= n1/n2;
+
+
+            document.getElementById('result').innerHTML="Result= "+result;
+        }
+        // function answer(){
+        //     let n1=document.getElementById('n1').value;
+        //     let n2=document.getElementById('n2').value;
+        //     let add=parseInt(n1)+parseInt(n2);
+        //     let subtract=n1-n2;
+        //     let multi=n1*n2;
+        //     let divide=n1/n2;
+
+        //     switch(){
+
+        //     }
+        // }
+       
+
+    </script>
+</body>
+</html>

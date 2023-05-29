@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max-min</title>
+    <style>
+        input{
+            margin: 5px 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Find Max or Min Number among 3 or more numbers -->
+    <label for="n1">Number1</label><br>
+    <input type="text" id="n1"><br>
+    <label for="n2">Number2</label><br>
+    <input type="text" id="n2"><br>
+    <label for="n3">Number3</label><br>
+    <input type="text" id="n3"><br>
+    <input type="button" value="Max" onclick="maxNumber()">
+    <input type="button" value="Min" onclick="minNumber()"><br>
+    <p id="result"></p>
+
+
+    <script>
+        function maxNumber() {
+            let n1=document.getElementById('n1').value;
+            let n2=document.getElementById('n2').value;
+            let n3=document.getElementById('n3').value;
+            if(n1>n2 && n1>n3){
+                
+                document.getElementById('result').innerHTML="Max Number= "+n1;
+            }
+            else if(n2>n1 && n2>n3){
+                document.getElementById('result').innerHTML="Max Number= "+n2;
+            }
+            else{
+                document.getElementById('result').innerHTML="Max Number= "+n3;
+            }
+        }
+        function minNumber() {
+            let n1=document.getElementById('n1').value;
+            let n2=document.getElementById('n2').value;
+            let n3=document.getElementById('n3').value;
+            if(n1<n2 && n1<n3){
+                
+                document.getElementById('result').innerHTML="Min Number= "+n1;
+            }
+            else if(n2<n1 && n2<n3){
+                document.getElementById('result').innerHTML="Min Number= "+n2;
+            }
+            else{
+                document.getElementById('result').innerHTML="Min Number= "+n3;
+            }
+        }
+    </script>
+</body>
+</html>

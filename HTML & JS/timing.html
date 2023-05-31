@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing</title>
+</head>
+<body>
+    
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" align="Center">
+        <tr valign="Middle">
+            <td align="Center">
+                <img src="cupaJava.jpg" alt="java" name="cup" width="64" height="38"><p><a href="#" onclick="interval()">interval</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" oncanplay="timeOut()">Time Out</a>
+
+            </td>
+
+        </tr>
+    </table>
+
+    <script>
+        let cupUp=new Image();
+        cupUP.src="cupaJava.jpg";
+        let cupDown=new Image();
+        cupDown.src="hideJava.jpg";
+        let alpha;
+
+        function interval(){
+            alpha=window.setInterval("document.cup.src=cupDown.src",1000);
+
+        }
+        function timeOut(){
+            window.setTimeout("document.cup.src=cupUP.src",1000);
+            window.clearInterval(alpha);
+        }
+
+
+    </script>
+</body>
+</html>

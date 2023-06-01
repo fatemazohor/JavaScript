@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ev09</title>
+</head>
+<body>
+    <h2>9. Input 5 number in an array and make sum of these value.</h2>
+    <p id="sumValue"></p>
+    <script>
+        let myArray=[1,2,3,4,5];
+        let sumValue=0;
+
+        for(let i=0;i<myArray.length ;i++){
+            sumValue+= myArray[i];
+
+            // document.write("<p>"+ "Sum of array value= " + sumValue +"</p>");
+            document.getElementById("sumValue").innerHTML="Sum of array value= "+sumValue;
+        }
+        // document.getElementById("sumValue").innerHTML="Sum of array value= "+sumValue;
+    //    
+        
+    </script>
+</body>
+</html>

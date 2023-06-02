@@ -10,11 +10,13 @@
     <h2>3. Find next 5 integer number by using prompt from any value.</h2>
 
     <script>
-        let userInput= prompt("Enter Number");
+        let userInput= parseInt(prompt("Enter Value")) ;
         
-        let nextNumber= prompt("Enter next item no");
+        let nextNumber= parseInt(prompt("Enter next item no")) ;
+        // let nextNumber= 5
         let valueNumber= parseInt(userInput+1);
         let itemNo= parseInt(userInput+nextNumber);
+        
 
         for(let i=valueNumber ; i<=itemNo  ;i++){
             document.write("<p>"+ i+"</p>");

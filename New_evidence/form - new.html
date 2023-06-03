@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+   
+    <form action="form_result -new.html" target="_blank">
+        <label for="name">Name</label><p>
+        <input type="text" name="name" id="name"><p>
+            <label for="gender">Gender</label><p>
+                <input type="radio" name="gender" id="male"><label for="male">Male</label>
+                <input type="radio" name="gender" id="female"><label for="female">Female</label>
+                <input type="radio" name="gender" id="other"><label for="other">Other</label> <p>
+        <input type="submit" value="Submit" onclick="getData()">
+
+        <span id="gender"></span>
+    </form>
+
+
+    <script>
+
+        function getData(){
+            let name=document.getElementById("name").value;
+            let male=document.getElementById("male").value;
+            let female=document.getElementById("female").value;
+            let other=document.getElementById("other").value;
+
+
+            localStorage.setItem("name",name);
+            localStorage.setItem("male",male);
+            localStorage.setItem("female",female);
+            localStorage.setItem("other",other);
+
+
+
+           
+        }
+        
+    </script>
+</body>
+</html>

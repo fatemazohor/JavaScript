@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_result</title>
+</head>
+<body>
+    <label for="name">Name</label><p>
+        <span id="name"></span>
+        <span id="gender"></span>
+
+        <script>
+            document.getElementById("name").innerHTML=localStorage.getItem("name");
+
+
+            let gender=document.forms[0];
+            let txt="";
+            
+            for(let i=0;i<gender.length;i++){
+                if(gender[i].checked){
+                    txt= txt+ gender[i].value+ "";
+                }
+            }
+            document.getElementById("gender").innerHTML= txt;
+
+            // localStorage.setItem("male",male);
+            // localStorage.setItem("female",female);
+            // localStorage.setItem("other",other);
+
+            // let male=document.getElementById("male").value;
+            // let female=document.getElementById("female").value;
+            // let other=document.getElementById("other").value;
+
+            // if(male.checked==true){
+            //     document.getElementById("gender").innerHTML=localStorage.getItem("male");
+            // }
+            // else if(female.checked==true){
+            //     document.getElementById("gender").innerHTML=localStorage.getItem("female");
+            // }
+            // else{
+            //     document.getElementById("gender").innerHTML=localStorage.getItem("other");
+            // }
+
+            
+        </script>
+            
+</body>
+</html>

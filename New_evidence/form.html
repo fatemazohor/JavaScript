@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    
+    <form action="form_result.html" method="get">
+        <label for="fname">First Name</label><p>
+        <input type="text" name="" id="fname"><p>
+        <label for="lname">Last Name</label><p>
+        <input type="text" name="" id="lname"><p>
+        <label for="email">Email</label><p>
+        <input type="email" name="" id="email"><p>
+        <label for="password">Password</label><p>
+        <input type="password" name="" id="password"><p>
+        <label for="gender">Gender</label><p>
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+        <input type="radio" name="gender" id="other"><label for="other">Other</label> <p>
+        
+        <input type="submit" value="Submit" onclick="dataTransfer()">
+    </form>
+
+    <script>
+
+        function dataTransfer(){
+
+            const fname=document.getElementById("fname").value;
+            const lname=document.getElementById("lname").value;
+            const email=document.getElementById("email").value;
+            const password=document.getElementById("password").value;
+            
+            localStorage.setItem("fname",fname);                
+                                                            // fname value is string, that is why it is not in string sign.
+            localStorage.setItem("lname",lname);
+            localStorage.setItem("email",email);
+            localStorage.setItem("password",password);
+        }
+        
+        
+
+
+        
+    </script>
+</body>
+</html>

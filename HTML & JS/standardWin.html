@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>standarWin</title>
+</head>
+<body >
+    <!-- <center>
+        <p>
+            <h2>Window Control</h2>
+
+            <form action="">
+                <input type="button" name="openBut" value="Click to open New Window" onclick="GetStanWin()"><p>
+                <input type="button" name="mvbyBut" value="Click to move relative" onclick="moveRel()"><p>
+                <input type="button" name="mvtoBut" value="Click to move absolute" onclick="moveAbs()"><p>
+                <input type="button" name="shrinkBut" value="Click to change relative size" onclick="shrink()"><p>
+                <input type="button" name="shrivelBut" value="Click to change absolute size" onclick="shrivel()"><p>
+            </form>
+    </center> -->
+    
+
+    <script>
+
+// let myWindow;
+
+//         function GetStanWin(){
+//             open("max_min.html","max_min","toolbar=no,width=400,height=400")
+//         }
+//         function moveRel(){
+//             myWindow.moveBy(20,20)
+//         }
+//         function moveAbs(){
+//             myWindow.moveTo(20,20)
+//         }
+//         function shrink(){
+//             myWindow.resizeBy(15,10)
+//         }
+//         function shrivel(){
+//             myWindow.resizeTo(400,300)
+//         }
+
+
+class Mobile{
+    writeMessage(message){
+        document.write("It is Your message "+message);
+    }
+    makeCall(number){
+        document.write("Your dial number is "+number);
+    }
+}
+    let androidMobile=new Mobile();
+    androidMobile.writeMessage("no class tomorrow"+"<br>");
+    androidMobile.makeCall("021652565106");
+    </script>
+</body>
+</html>

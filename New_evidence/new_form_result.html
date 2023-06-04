@@ -5,24 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>new_form_result</title>
+    <style>
+        .container{
+            margin: 5px auto;
+            width: 60%;
+            height: 100vh;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: -2px -1px 25px -2px #b3adad;
+        }
+    </style>
 </head>
 <body>
-    <h3>Form 
-    Data
-    </h3>
+    <div class="container">
+        <h3>Form Data</h3>
     <label for="name"><b>Name:</b></label> <p>
     <span id="name"></span><p>
     <label for="email"><b>Email:</b></label><p>
-        <p id="email"></p><p>
+        <p id="email"></p>
     <label for="password"><b>Password:</b></label><p>
         <!-- <span id="password"></span> -->
         <p id="password"></p>
     <label for="Gender"><b>Gender:</b></label><p>
-        <!-- <span id="password"></span> -->
         <p id="gender"></p>
     <label for="subject"><b>Subject:</b></label><p>
-        <!-- <span id="password"></span> -->
         <p id="subject"></p>
+    <label for="hobby"><b>Hobbies:</b></label><p>
+        <p id="hobby"></p>
+    <label for="about"><b>About:</b></label><p>
+        <p id="about"></p>
+        
+    </div>
+    <!-- <h3>Form Data</h3>
+    <label for="name"><b>Name:</b></label> <p>
+    <span id="name"></span><p>
+    <label for="email"><b>Email:</b></label><p>
+        <p id="email"></p>
+    <label for="password"><b>Password:</b></label><p>
+        <span id="password"></span>
+        <p id="password"></p>
+    <label for="Gender"><b>Gender:</b></label><p>
+        <p id="gender"></p>
+    <label for="subject"><b>Subject:</b></label><p>
+        <p id="subject"></p>
+    <label for="hobbies"><b>Hobbies:</b></label><p>
+        <p id="hobbies"></p> -->
 
 
 
@@ -32,6 +60,8 @@
             document.getElementById("password").innerHTML=localStorage.getItem("password");
             document.getElementById("gender").innerHTML=localStorage.getItem("s_gender");
             document.getElementById("subject").innerHTML=localStorage.getItem("s_subject");
+            document.getElementById("hobby").innerHTML=localStorage.getItem("s_hobby");
+            document.getElementById("about").innerHTML=localStorage.getItem("s_about");
         </script>
 </body>
 </html>

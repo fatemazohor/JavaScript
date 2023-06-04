@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new_form_result</title>
+</head>
+<body>
+    <h3>Form 
+    Data
+    </h3>
+    <label for="name"><b>Name:</b></label> <p>
+    <span id="name"></span><p>
+    <label for="email"><b>Email:</b></label><p>
+        <p id="email"></p><p>
+    <label for="password"><b>Password:</b></label><p>
+        <!-- <span id="password"></span> -->
+        <p id="password"></p>
+    <label for="Gender"><b>Gender:</b></label><p>
+        <!-- <span id="password"></span> -->
+        <p id="gender"></p>
+    <label for="subject"><b>Subject:</b></label><p>
+        <!-- <span id="password"></span> -->
+        <p id="subject"></p>
+
+
+
+        <script>
+            document.getElementById("name").innerHTML=localStorage.getItem("s_name");
+            document.getElementById("email").innerHTML=localStorage.getItem("email");
+            document.getElementById("password").innerHTML=localStorage.getItem("password");
+            document.getElementById("gender").innerHTML=localStorage.getItem("s_gender");
+            document.getElementById("subject").innerHTML=localStorage.getItem("s_subject");
+        </script>
+</body>
+</html>

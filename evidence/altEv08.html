@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>altEv08</title>
+</head>
+<body>
+    
+    <script>
+        let x=prompt("Enter value of X");
+        let powerN=prompt("Enter value of power or n");
+        let counter=1;
+        if(powerN==0){
+            document.write("<p>"+ "Result = " + "1 " +"</p>");
+        }
+        else{
+            for(let i=1;i<=powerN;i++){
+                counter*= parseInt(x);
+
+            }
+            document.write("<p>"+ "Result = " + counter +"</p>");
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new2_p</title>
+</head>
+<body>
+    
+    <script>
+        let num1=prompt(" enter n1");
+        let num2=prompt(" enter 2");
+        for(let x=num1;x<=num2;x++){
+                    let con=0;
+                    for(let y=1;y<=x;y++){
+                        if(x%y==0){
+                            con+=1;
+                        }
+                    
+                    }
+                    if(con==2){
+                        alert("prime"+ x);
+                        console.log(x);
+                        document.write(x+"<p></p>");
+                    }
+                }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <h2>Input 5 value in an array and print sum of array and array value. 10 marks</h2>
+    
+    <script>
+        let myArray=[];
+         myArray[0]= parseInt(prompt("First")) ;
+         myArray[1]=parseInt(prompt("Second"));
+         myArray[2]=parseInt(prompt("3rd"));
+         myArray[3]=parseInt(prompt("4th"));
+         myArray[4]=parseInt(prompt("5th"));
+
+         let result=0;
+         for(let i=0;i<=4;i++){
+            result+=  myArray[i];
+            document.write("<p>"+ "myArray "+ "["+[i]+ "]" + "= " + myArray[i]+"</p>");
+         }
+
+         document.write("<p>"+"Sum of Array= " + result+"</p>");
+    </script>
+</body>
+</html>

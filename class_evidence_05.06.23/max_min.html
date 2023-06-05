@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max_min</title>
+</head>
+<body>
+    <h2>Find max and min out of three input number. 5 marks</h2>
+    
+
+   
+    <script>
+       
+        let n1=parseInt(prompt("enter number1")) ;
+        let n2=parseInt(prompt("enter number2")) ;
+        let n3=parseInt(prompt("enter number3")) ;
+        let max=0;
+        let min=99999;
+
+        if(n1<n2 && n1<n3 ){
+            document.write("<p>"+ "Min Number " +n1 +"</p>");
+        }
+        else if(n2<n1 && n2<n3){
+            document.write("<p>"+ "Min Number " +n2 +"</p>");
+        }
+        else{
+            document.write("<p>"+ "Min Number " +n3 +"</p>");
+        }
+
+
+
+        if(n1>n2 && n1>n3){
+            document.write("<p>"+ "Max Number " +n1 +"</p>");
+        }
+        else if(n2>n1 && n2>n3){
+            document.write("<p>"+ "Max Number " +n2 +"</p>");
+        }
+        else{
+            document.write("<p>"+ "Max Number " +n3 +"</p>");
+        }
+
+
+       
+    </script>
+</body>
+</html>

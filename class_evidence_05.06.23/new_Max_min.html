@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new_max_min</title>
+</head>
+<body>
+    <p id="resultHere"></p>
+    <script>
+        let n1=prompt("enter numner 01");
+        let n2=prompt("enter numner 02");
+        let n3=prompt("enter numner 03");
+        let max=0;
+        let min=9999999;
+
+        // find max number start
+        if(n1>n2 && n1>n3 && max<n1){
+            max=n1;
+        }
+        else if(n2>n1 && n2>n3 && max<n2){
+                max=n2;
+        }
+        else if (max<n3) {
+            max=n3;
+        }
+       
+        // find max number end
+        // find min number start
+        if(n1<n2 && n1<n3 && min>n1){
+            min=n1;
+        }
+        else if(n2<n1 && n2<n3 && min>n2){
+                min=n2;
+        }
+        else if(n3<n1 && n3<n2 && min>n3) {
+            min=n3;
+        }
+        // document.write("Max Number= "+max+" MIn Number= "+min);
+        alert("Max Number= "+max+" MIn Number= "+min);
+        // document.getElementById("resultHere").innerHTML= ("Max Number= "+max+" MIn Number= "+min)
+        // find min number end
+    </script>
+</body>
+</html>

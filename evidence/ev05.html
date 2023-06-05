@@ -11,10 +11,10 @@
 
     <script>
         let n1=prompt("enter Number");
+        let fib=1;
         for(let i=1;i<=n1;i++){
-            if(n1%i==0){
-                document.write("<p>"+ i +"</p>");
-            }
+            fib*=i;
+            document.write("<p>"+fib +"</p>")
         }
     </script>
 </body>

@@ -98,6 +98,8 @@
 
             const fname=document.getElementById("fname").value;
             const lname=document.getElementById("lname").value;
+            // const fname=document.getElementById("fname").value;
+            // const lname=document.getElementById("lname").value;
             const email=document.getElementById("email").value;
             const password=document.getElementById("password").value;
             let gender;
@@ -128,9 +130,10 @@
             }
             let myhobby=h.toStrign();
             
-            localStorage.setItem("fname",fname);                
+            localStorage.setItem("fname",fname);              
+            localStorage.setItem("lname",lname);              
                                                             // fname value is string, that is why it is not in string sign.
-            localStorage.setItem("lname",lname);
+            
             localStorage.setItem("email",email);
             localStorage.setItem("password",password);
             localStorage.setItem("s_gender",gender);

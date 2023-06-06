@@ -9,18 +9,14 @@
 <body>
     <script>
         var max = 0; 
+        var min = 99999999;
         for(var i=0;i<3;i++){ 
         var val = parseInt(prompt("Enter a number"));
         max = max > val ? max : val; 
-        } 
-        // alert(max);
-        // min
-        var min = 99999999; 
-        for(var i=0;i<3;i++){ 
-        var val = parseInt(prompt("Enter a number"));
-        min = min < val ? min : val; 
-        } 
-        alert(max+ " " +min);
+        min = min < val ? min : val;
+        
+        } alert("Max " +max+ " Min " +min);
+        
     </script>
 </body>
 </html>

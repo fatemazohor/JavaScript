@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_result</title>
+    <style>
+        .container{
+            margin: 5px auto;
+            width: 60%;
+            height: 100vh;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: -2px -1px 25px -2px #b3adad;
+        }
+        label{
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Form Result</h3>
+
+
+    <label for="fname" >First Name</label><p>
+        <span id="fname"></span><p>       
+    <label for="lname" >Last Name</label><p>
+        <span id="lname"></span><p>
+    <label for="email" >Email</label><p>
+        <span id="email"></span><p>
+    <label for="password" >Password</label><p>
+        <span id="password"></span><p></p>
+    <label for="gender" >Gender</label><p>
+        <span id="gender"></span><p></p>
+    <label for="s_subject" >Subject</label><p>
+        <span id="s_subject"></span><p></p>
+    <label for="s_hobby" >Hobby</label><p>
+        <span id="s_hobby"></span>
+
+    </div>
+    
+
+
+        <script>
+           document.getElementById("fname").innerHTML=localStorage.getItem("s_fname");
+           document.getElementById("lname").innerHTML=localStorage.getItem("s_lname");
+           document.getElementById("email").innerHTML=localStorage.getItem("s_email");
+           document.getElementById("password").innerHTML=localStorage.getItem("s_password");
+           document.getElementById("gender").innerHTML=localStorage.getItem("s_gender");
+           document.getElementById("s_subject").innerHTML=localStorage.getItem("s_subject");
+           document.getElementById("s_hobby").innerHTML=localStorage.getItem("s_hobby");
+        </script>
+            
+</body>
+</html>

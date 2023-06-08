@@ -74,23 +74,7 @@
         </form>
     </div>
     
-    <!-- <form action="form_result.html" method="get">
-        <label for="fname">First Name</label><p>
-        <input type="text" name="" id="fname"><p>
-        <label for="lname">Last Name</label><p>
-        <input type="text" name="" id="lname"><p>
-        <label for="email">Email</label><p>
-        <input type="email" name="" id="email"><p>
-        <label for="password">Password</label><p>
-        <input type="password" name="" id="password"><p>
-        <label for="gender">Gender</label><p>
-        <input type="radio" name="gender" id="male"><label for="male">Male</label>
-        <input type="radio" name="gender" id="female"><label for="female">Female</label>
-        <input type="radio" name="gender" id="other"><label for="other">Other</label> <p>
-        <label for=""></label>
-        
-        <input type="submit" value="Submit" onclick="dataTransfer()">
-    </form> -->
+    
 
     <script>
 
@@ -123,19 +107,14 @@
             let subject=subJ.options[subJ.selectedIndex].text;
             // Function for subject select end
 
-                // 
-                // let hobbies=[];
-                // let m_hobby=document.querySelectorAll("input[type=checkbox]:checked");
-                // for (let i=0;i<m_hobby.length;i++){
-                //     hobbies.push(m_hobby[i].value);
-                // }
-                // let s_hobby = hobbies.toString();
-                let hobbies = [];
-            let ho = document.querySelectorAll('input[type=checkbox]:checked');
-            for (let i = 0; i < ho.length; i++) {
-                hobbies.push(ho[i].value);
+                //checkbox start 
+            let hobby=[];
+            let m_h=document.querySelectorAll('input[type=checkbox]:checked');
+            for (let i=0;i<m_h.length;i++){
+                hobby.push(m_h[i].value);
             }
-            let s_hobby = hobbies.toString();
+            let s_hobby=hobby.toString();
+            // checkbox end  
 
            localStorage.setItem("s_fname",fname);
            localStorage.setItem("s_lname",lname);

@@ -5,22 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>new_form</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
 
 </head>
 <body>
     
-    <form action="new_form_result.html">
+    <form action="new_form_result.html" onsubmit="return dataTransfer()">
         <label for="name">Name</label> <p>
         <input type="text" name="name" id="name"><p>
+            <span id="eName"></span><p></p>
         <label for="email">Email</label><p>
-        <input type="email" name="email" id="email"><p>
+        <input type="text" name="email" id="email"><p>
+            <span id="eEmail"></span><p></p>
         <label for="password">Password</label><p>
         <input type="password" name="password" id="password"><p>
+            <span id="ePassword"></span><p></p>
 
         <label for="gender">Gender</label><p></p>
         <input type="radio" name="gender" id="male"><label for="male">Male</label>
         <input type="radio" name="gender" id="female"><label for="female">Female</label>
         <input type="radio" name="gender" id="other"><label for="other">Other</label><p></p>
+            <span id="eGender"></span><p></p>
 
         <label for="Subject">Subject</label><p></p>
         <select name="" id="subject"><p></p>
@@ -39,7 +48,7 @@
 
         <label for="about"></label>
         <textarea name="" id="about" cols="30" rows="10"></textarea><p></p>
-        <input type="submit" value="Submit" onclick="dataTransfer()">
+        <input type="submit" value="Submit" >
 
 
 
@@ -54,6 +63,8 @@
             const email=document.getElementById("email").value;
             const password=document.getElementById("password").value;
             const sabout=document.getElementById("about").value;
+            const regEx=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            const pregEx=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
             let gender;
 
                     // function for gender (radio) select
@@ -79,33 +90,71 @@
 
                          // function for checkbox
 
-            // let hobby= [];
-            // let ho= document.querySelectorAll("input[type=checkbox]:checked")
+            let hobby= [];
+            let ho= document.querySelectorAll("input[type=checkbox]:checked")
 
-            // for(let i=0;i<ho.length;i++){
-            //     hobby.push(ho[i].value);
-            // }
-            // let s_hobby=hobby.toString();
+            for(let i=0;i<ho.length;i++){
+                hobby.push(ho[i].value);
+            }
+            let s_hobby=hobby.toString();
 
             
-            let hobbies = [];
-            let ho = document.querySelectorAll('input[type=checkbox]:checked');
-            for (let i = 0; i < ho.length; i++) {
-                hobbies.push(ho[i].value);
-            }
-            let s_hobby = hobbies.toString();
+            // let hobbies = [];
+            // let ho = document.querySelectorAll('input[type=checkbox]:checked');
+            // for (let i = 0; i < ho.length; i++) {
+            //     hobbies.push(ho[i].value);
+            // }
+            // let s_hobby = hobbies.toString();
             // function for checkbox end
+
+            // Name Validation start
+                if(name.length<3 || name.length>=20){
+                    debugger;
+                    document.getElementById("eName").innerHTML="Name must be between 3 to 20 character";
+                    return false;
+                }
+            // Name Validation end
+            // Email Validation start
+            if(!(regEx.test(email))){
+                debugger;
+                document.getElementById("eEmail").innerHTML="email not valid";
+                return false;
+            }
+            // Email Validation end
+            // password Validation start
+            // if(!(pregEx.test(password))){
+            //         debugger;
+            //         document.getElementById("ePassword").innerHTML="Min 1 uppercase letter.+ "<br>"+ Min 1 lowercase letter.Min 1 special character.Min 1 number.Min 8 characters.Max 30 characters.";
+            //         return false;
+            //     }
+            if(password.length<=8 || password.length>=20){
+                    debugger;
+                    document.getElementById("ePassword").innerHTML="password not valid,must be 8 characters";
+                    return false;
+                }
+
+
+            // password Validation end
+            // Gender Validation start
+                if(!(male.checked || female.checked || other.checked )){
+                    document.getElementById("eGender").innerHTML="gender must be selected";
+                    return false;
+                }
+
+
+            // Gender Validation end
+
 
 
 
              
-            localStorage.setItem("s_name",name)
-            localStorage.setItem("email",email);
-            localStorage.setItem("password",password);
-            localStorage.setItem("s_gender",gender);
-            localStorage.setItem("s_subject",subject);
-            localStorage.setItem("s_hobby", s_hobby);
-            localStorage.setItem("s_about", sabout);
+            sessionStorage.setItem("s_name",name)
+            sessionStorage.setItem("email",email);
+            sessionStorage.setItem("password",password);
+            sessionStorage.setItem("s_gender",gender);
+            sessionStorage.setItem("s_subject",subject);
+            sessionStorage.setItem("s_hobby", s_hobby);
+            sessionStorage.setItem("s_about", sabout);
                     // key name is new name. it does not have to be same as id .
 
              

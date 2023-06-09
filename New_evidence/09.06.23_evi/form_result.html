@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_result</title>
+    <strong>
+        
+    </strong>
+</head>
+<body>
+    <h1>Form Data</h1>
+    <label for="name">Name:</label>
+    <p id="name"></p>
+       
+    <label for="email">Email:</label>
+    <p id="email"></p>
+     
+    <label for="password">Password:</label>
+    <p id="password"></p>
+    <label for="gender">Gender:</label>
+    <p id="gender"></p>
+
+    <script>
+      document.getElementById("name").innerHTML=sessionStorage.getItem("m_name");
+      document.getElementById("email").innerHTML=sessionStorage.getItem("m_email");
+      document.getElementById("password").innerHTML=sessionStorage.getItem("m_password");
+      document.getElementById("gender").innerHTML=sessionStorage.getItem("m_gender");
+    </script>
+</body>
+</html>

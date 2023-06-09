@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q03</title>
+</head>
+<body>
+    <h2>Find the max and min number from three number.</h2>
+    <script>
+        let max=0;
+        let min=999999;
+        
+        for(let i=1;i<=3;i++){
+            let num=prompt("Enter Number");
+            max= max>num?max:num;
+            min=min<num?min:num;
+        }
+        document.write("Max = "+max+" Min = "+min);
+    </script>
+</body>
+</html>

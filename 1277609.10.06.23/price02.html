@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>price02</title>
+    <style>
+        #myCol{
+            margin: 10px auto;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: -2px -4px 25px -4px #000 ;
+        }       
+    </style>
+    
+</head>
+<body>
+    <div id="myCol">
+    <label for="unti">Unit Price</label><p></p>
+    <input type="text" name="unit" id="unit"><p></p>
+
+    <label for="quantity">Quantity</label><p></p>
+    <input type="text" name="quantity" id="quantity" oninput="payablePrice()"><p></p>
+
+
+    <label for="price">Price</label><p></p>
+    <input type="text" id="price" ><p></p>
+    
+    <label for="discount">Discount</label><p></p>
+    <input type="text" id="discount"><p></p>
+    
+    <label for="final">Payable amount</label><p></p>
+    <input type="text" id="final"><p></p>
+
+</div>
+    
+
+
+    <script>
+        function payablePrice(){
+            let m1=document.getElementById("unit").value;
+            let m2=document.getElementById("quantity").value;
+
+            let n1;
+            let n2;
+            let n3;
+            
+            // unti price
+            n1=(m1*m2);
+            document.getElementById("price").value=n1;
+            // discount
+            
+            if(n1<=500){
+                n2=(n1*5)/100;
+            }
+            else if(n1<=1000){
+                n2=(n1*7)/100;
+            }
+            else if(n1>1000){
+                n2=(n1*7.5)/100;
+            }
+            document.getElementById("discount").value=n2;
+            document.getElementById("final").value=(n1-n2);
+        }
+        
+
+    </script>
+</body>
+</html>

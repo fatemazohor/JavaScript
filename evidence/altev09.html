@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>altev09</title>
+</head>
+<body>
+    <h2>9. Input 5 number in an array and make sum of these value.</h2>
+    <p id="sumValue"></p>
+    <script>
+        let myArray=prompt("Enter array item No.");
+        let thisArray=[];
+        let sumValue=0;
+        for(let i=1;i<=myArray;i++){
+            let num=parseInt(prompt("Enter Number "+i));
+            thisArray.push(num);
+            sumValue+=num;
+            
+        }
+        document.write("myArray= " +thisArray+"<br>"+"myArray sum value= " +sumValue);
+        // document.write("myArray sum value= " +sumValue);
+    </script>
+</body>
+</html>

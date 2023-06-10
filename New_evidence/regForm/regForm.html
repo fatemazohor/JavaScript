@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regForm</title>
+    <style>
+        span{
+            color: red;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="regForm_result.html" onsubmit="return dataTransfer()">
+        <label for="name">Name</label> <p>
+        <input type="text" name="name" id="name"><p>
+<<<<<<< HEAD
+            <span id="v_name"></span>
+=======
+            <span id="vName"></span><p></p>
+>>>>>>> 7098519231dd91802fc5679dd23bab35975c664f
+        <label for="email">Email</label><p>
+        <input type="text" name="email" id="email"><p>
+            <span id="vEmail"></span><p></p>
+        <label for="password">Password</label><p>
+        <input type="password" name="password" id="password"><p>
+            <span id="vPassword"></span><p></p>
+
+        <label for="gender">Gender</label><p></p>
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+        <input type="radio" name="gender" id="other"><label for="other">Other</label><p></p>
+            <span id="vGender"></span><p></p>
+
+        <label for="Subject">Subject</label><p></p>
+        <select name="" id="subject"><p></p>
+            <option value="">--Select One--</option>
+            <option value="">HTML</option>
+            <option value="">CSS</option>
+            <option value="">JS</option>
+            <option value="">JEE</option>
+        </select>
+        <p></p>
+
+        <label for="">Hobby</label><p></p>
+        <input type="checkbox" name="" value="Football"><label for="football">Football</label>
+        <input type="checkbox" name="" value="Swimming"><label for="swimming">Swimming</label>
+        <input type="checkbox" name="" value="Reading"><label for="reading">Reading</label><p></p>
+
+        <label for="about"></label>
+        <textarea name="" id="about" cols="30" rows="10"></textarea><p></p>
+        <input type="submit" value="Submit">
+
+
+
+    </form>
+
+
+    <script>
+        function dataTransfer(){
+            const name=document.getElementById("name").value;
+            const email=document.getElementById("email").value;
+            const password=document.getElementById("password").value;
+            const about=document.getElementById("about").value;
+            const regEx=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let gender;
+
+            // gender 
+
+            if(document.getElementById("male").checked==true){
+                gender="Male";
+
+            }
+            else if(document.getElementById("female").checked==true){
+                gender="Female";
+            }
+            else if(document.getElementById("other").checked==true){
+                gender="Other";
+            }
+            
+
+            // select dropdown
+
+            let subJ=document.getElementById("subject");
+            let subject=subJ.options[subJ.selectedIndex].text; 
+
+            // checkbox
+            let h=[];
+            let hobby=document.querySelectorAll('input[type=checkbox]:checked');
+            for(let i=0;i<hobby.length;i++){
+                h.push(hobby[i].value);
+            }
+            let s_hobby=h.toString();
+
+<<<<<<< HEAD
+            // validation name
+            if(name.length<3 || name.length>20){
+                document.getElementById("v_name").innerHTML="Invalid";
+                return false;
+            }
+
+            localStorage.setItem("m_name",name);
+            localStorage.setItem("m_email",email);
+            localStorage.setItem("m_password",password); 
+            localStorage.setItem("m_gender",gender);
+            localStorage.setItem("m_subject",subject);
+            localStorage.setItem("m_hobby",s_hobby);
+            localStorage.setItem("m_about",about);
+=======
+            // name validation
+
+            if(name.length<3 || name.length>=20){
+                debugger;
+                document.getElementById("vName").innerHTML="invalid name length";
+                return false;
+            }
+
+            // name validation end
+            // email validation
+
+            if(!(regEx.test("email"))){
+                document.getElementById("vEmail").innerHTML="Invalid email"
+                return false;
+            }
+
+            // email validation end
+            // password validation
+            if(password.length<8 || password.length>20){
+                document.getElementById("vPassword").innerHTML="Invalid password";
+                return false;
+            }
+
+            // password validation end
+            // gender validation
+            if(!(male.checked || female.checked || other.checked)){
+                document.getElementById("vGender").innerHTML="gender must be selected";
+            
+                return false;
+            }
+            // gender validation end
+
+            sessionStorage.setItem("m_name",name);
+            sessionStorage.setItem("m_email",email);
+            sessionStorage.setItem("m_password",password); 
+            sessionStorage.setItem("m_gender",gender);
+            sessionStorage.setItem("m_subject",subject);
+            sessionStorage.setItem("m_hobby",s_hobby);
+            sessionStorage.setItem("m_about",about);
+>>>>>>> 7098519231dd91802fc5679dd23bab35975c664f
+
+            
+            
+        }
+
+        
+    </script>
+</body>
+</html>

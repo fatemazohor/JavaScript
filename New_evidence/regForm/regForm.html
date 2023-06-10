@@ -11,6 +11,7 @@
     <form action="regForm_result.html">
         <label for="name">Name</label> <p>
         <input type="text" name="name" id="name"><p>
+            <span id="v_name"></span>
         <label for="email">Email</label><p>
         <input type="email" name="email" id="email"><p>
         <label for="password">Password</label><p>
@@ -79,6 +80,12 @@
                 h.push(hobby[i].value);
             }
             let s_hobby=h.toString();
+
+            // validation name
+            if(name.length<3 || name.length>20){
+                document.getElementById("v_name").innerHTML="Invalid";
+                return false;
+            }
 
             localStorage.setItem("m_name",name);
             localStorage.setItem("m_email",email);

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idbForm</title>
+</head>
+<body>
+    <form id="idbForm">
+        <label for="name">Name</label><p>
+        <input type="text" name="" id="name"><p>
+        <label for="contact">Contact</label><p>
+        <input type="text" name="" id="contact"><p>
+        <label for="remarks">Remarks</label><p>
+        <textarea name="" id="remarks" cols="30" rows="5"></textarea><p>
+
+        <label for="gender">Gender</label><p>
+        <input type="radio" name="gender" id="male" value="Male">Male
+        <input type="radio" name="gender" id="female" value="Female">Female<p>
+
+        <label for="course">Course</label><p>
+        <input type="checkbox" name="" value="NT">NT
+        <input type="checkbox" name="" value="IAD">IAD
+        <input type="checkbox" name="" value="DDD">DDD
+        <input type="checkbox" name="" value="NT">ESAD<p>
+
+        <label for="location">Location</label><p>
+        <select name="location" id="location">
+            <option value="--Select one--">--Select one--</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option>
+        </select><p>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        function dataTransfer(event){
+            event.preventDefault();
+
+            const name=document.getElementById("name").value;
+            const contact=document.getElementById("contact").value;
+            const remarks=document.getElementById("remarks").value;
+            const gender=document.querySelector('input[type="radio"]:checked').value;
+
+            let course=[];
+            const myCourse=document.querySelectorAll('input[type="checkbox"]:checked');
+            myCourse.forEach(function(item){
+                course.push(item.value);
+            })
+
+            const location=document.getElementById("location").value;
+
+            // name valid
+            if((name.length<3 || name.length>20)){
+                alert("Name length not valid");
+                return false;
+            }
+
+            // gender valid
+            // if(!(male.checked || female.checked)){
+            //     alert("choose a gender");
+            //     return false;
+            // }
+
+            let output="Name: "+name+"<br>",
+            outputC="Contact: "+contact+"<br>",
+            outputR="Remarks: "+remarks+"<br>";
+            outputG="Gender: "+gender+"<br>";
+            outputCo="Course: "+course.join(",")+"<br>";
+            outputL="Location: "+location+"<br>";
+
+            let newWindow=window.open("","_blank");
+            newWindow.document.write(output+"<br>"+outputC+"<br>"+outputR+"<br>"+outputG+"<br>"+outputCo+"<br>"+outputL);
+        }
+        let form=document.getElementById("idbForm");
+        form.addEventListener("submit",dataTransfer);
+    </script>
+</body>
+</html>

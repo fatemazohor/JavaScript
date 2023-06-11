@@ -11,28 +11,32 @@
     <p id="sumValue"></p>
     <script>
 
-        let number1= prompt("Enter first Number");
-        let number2= prompt("Enter Second Number");
-        let number3= prompt("Enter Third Number");
-        let number4= prompt("Enter Fourth Number");
-        let number5= prompt("Enter Fifth Number");
+        let number1=parseInt(prompt("Enter first Number")) ;
+        let number2=parseInt(prompt("Enter Second Number")) ;
+        let number3=parseInt(prompt("Enter Third Number")) ;
+        let number4=parseInt(prompt("Enter Fourth Number")) ;
+        let number5=parseInt(prompt("Enter Fifth Number")) ;
 
         // let myArray=[1,2,3,4,5];
         let myArray=[number1,number2,number3,number4,number5];
         document.write("Array Items " +myArray+"<br>");
 
         let sumValue=0;
+        myArray.forEach(function(item){
+            sumValue+=item;
+        })
+
          
-        for(let i=0;i<myArray.length ;i++){
-            sumValue+= parseInt(myArray[i]) ;
+        // for(let i=0;i<myArray.length ;i++){
+        //     sumValue+= parseInt(myArray[i]) ;
 
 
           
 
-            // document.write("<p>"+ "Sum of array value= " + sumValue +"</p>");
-            document.getElementById("sumValue").innerHTML="Sum of array value= "+sumValue;
-        }
-        // document.getElementById("sumValue").innerHTML="Sum of array value= "+sumValue;
+        //     document.write("<p>"+ "Sum of array value= " + sumValue +"</p>");
+        //     document.getElementById("sumValue").innerHTML="Sum of array value= "+sumValue;
+        // }
+        document.getElementById("sumValue").innerHTML="Sum of array value= "+sumValue;
         
         
     </script>

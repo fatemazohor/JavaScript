@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newForm</title>
+</head>
+<body>
+    <form id="newForm">
+        <label for="name">Name</label>
+        <input type="text" name="" id="name">
+
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+
+        <label for="course">Course</label>
+        <input type="checkbox" name="" value="NT">NT
+        <input type="checkbox" name="" value="DDD">DDD
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function dataTransfer(event){
+            event.preventDefault();
+
+            const name=document.getElementById("name").value;
+            const gender=document.querySelector('input[type="radio"]:checked').value;
+
+            const course=document.querySelectorAll('input[type="checkbox"]:checked');
+            let myCourse=[];
+
+            course.forEach(function(item){
+                myCourse.push(item.value);
+            })
+
+            let output="Name: "+name+"<br>";
+            output+="Gender: "+gender+"<br>";
+            output+="course: "+myCourse.join(",")+"<br>";
+
+            let newWindow=window.open("","_blank");
+            newWindow.document.write(output);
+        }
+        let form=document.getElementById("newForm");
+        form.addEventListener("submit",dataTransfer);
+    </script>
+</body>
+</html>

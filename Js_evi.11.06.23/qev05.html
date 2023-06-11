@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qu05</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ev10</title>
+    <style>
+        input{
+            margin: 5px 0 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>10. Make a html file with input field as Price another input field as discount percentage and calculate the price after discount. -->
+    </h2>
+
+    <label for="price">Price</label><br>
+    <input type="text" name="price" id="price"><br>
+    <label for="discount">Discount</label><br>
+    <input type="text" name="discount" id="discount" oninput="finalPrice()"><br>
+
+    <label for="final">Final Price</label><br>
+    <input type="text" name="final" id="result">
+    
+    <script>
+
+        function finalPrice(){
+            let n1=document.getElementById("price").value;
+            let n2=document.getElementById("discount").value;
+            let p=n1-(n1*n2)/100;
+
+            // document.getElementById('result').innerHTML="Final Price= "+p;
+            document.getElementById('result').value=p;
+        
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>

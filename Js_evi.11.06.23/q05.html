@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qo5</title>
+</head>
+<body>
+    <h2>5.	Make an html file with an input field as Price and another input field as a discount percentage and calculate the price after the discount.(No need to use  button)</h2>
+
+
+    <label for="price">Price</label><br>
+    <input type="text" name="price" id="price"><br>
+    <label for="discount">Discount</label><br>
+    <input type="text" name="discount" id="discount" oninput="myFunction()"><br>
+
+    <label for="final">Final Price</label><br>
+    <input type="text" name="final" id="result">
+    <script>
+        function myFunction(){
+            let n1=document.getElementById("price").value;
+            let n2=document.getElementById("discount").value;
+            let p= n1-(n1*n2)/100;
+        document.getElementById("result").value=p ;
+        }
+        
+        
+    </script>
+</body>
+</html>

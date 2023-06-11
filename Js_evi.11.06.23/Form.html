@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Name</label><br><p></p>
+        <input type="text" name="" id="name"><br>
+    
+        <label for="contact">Contact</label><br><p></p>
+        <input type="text" name="" id="contact"><br>
+    
+        <label for="remarks">Remarks</label><br><p></p>
+        <textarea name="" id="remarks" cols="30" rows="5"></textarea><p></p>
+    
+        <label for="sex">Sex</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female <p></p>
+    
+        <label for="course">Course</label><p></p>
+        <input type="checkbox" value="NT">NT
+        <input type="checkbox" value="IAD">IAD
+        <input type="checkbox" value="DDD">DDD
+        <input type="checkbox" value="ESAD">ESAD
+        <p></p>
+    
+        <label for="location">Location</label><p></p>
+        <select name="" id="location">
+            <option value="select one">--Select one--</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option>
+        </select><p></p>
+    
+        <input type="submit" value="Submil">
+        <input type="reset" value="Reset">
+    
+    </form>
+
+    <script>
+        function dataTransfer(event){
+            event.preventDefault();
+            const name=document.getElementById("name").value;
+            const contact=document.getElementById("contact").value;
+            const remarks=document.getElementById("remarks").value;
+            // const gender=document.querySelector('input[type="radio"].checked').value;
+            const gender=document.querySelector('input[name="gender"]:checked' ).value;
+            
+            let subject=[];
+            const course=document.querySelectorAll('input[type="checkbox"]:checked');
+            course.forEach(function (course){
+                subject.push(course.value);
+            })
+
+           
+            const location=document.getElementById("location").value;
+
+            // let dataM=("Name: "+ name+"<br>");
+            // dataM+=("Contact: "+contact + "<br>")
+            // dataM+=("remarks: "+remarks + "<br>")
+            // dataM+=("Gender: "+gender + "<br>")
+            // dataM+=("Course: "+subject.join(", ") + "<br>")
+            // dataM+=("Location: "+location + "<br>")
+
+            let dataN=("Name: "+ name+"<br>"),
+            dataC=("Contact: "+contact + "<br>"),
+            dataR=("remarks: "+remarks + "<br>"),
+            dataG=("Gender: "+gender + "<br>"),
+            dataCo=("Course: "+subject.join(", ") + "<br>"),
+            dataL=("Location: "+location + "<br>");
+
+            let newWindow=window.open(" ", "_blank");
+            // newWindow.document.write("<pre>"+dataM +"</pre>");
+            newWindow.document.write("<p>"+"<b>Form DATA</b>"+ "<br>" +dataN+ "<br>"+ dataC+ "<br>"+ dataR+ "<br>"+ dataG+ "<br>"+ dataCo+ "<br>"+ dataL+ "</p>");
+        }
+
+        let form=document.getElementById("myForm");
+        form.addEventListener("submit",dataTransfer);
+    </script>
+</body>
+</html>

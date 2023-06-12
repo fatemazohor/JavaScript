@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubbleAray_new</title>
+</head>
+<body>
+    <script>
+        let n1=prompt("Enter array item No.");
+        let myArray=[];
+        for(let i=1;i<=n1;i++){
+            let num=parseInt(prompt("enter number "+i))
+            myArray.push(num);
+        }
+        document.write("Inputed Array = "+myArray+"<p>");
+
+        // arrray sort
+        for(let i=1;i<myArray.length;i++){
+            for(let j=0;j<myArray.length-1;j++){
+                if(myArray[j]>myArray[j+1]){
+                    let temp=myArray[j];
+                    myArray[j]=myArray[j+1];
+                    myArray[j+1]=temp;
+                    document.write("Sorted Array1 = "+myArray+"<p>");
+                }
+            }
+        }
+        document.write("Sorted Array = "+myArray);
+    </script>
+</body>
+</html>

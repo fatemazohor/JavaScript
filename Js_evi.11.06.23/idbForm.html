@@ -40,10 +40,10 @@
         function dataTransfer(event){
             event.preventDefault();
 
-            const name=document.getElementById("name").value;
-            const contact=document.getElementById("contact").value;
-            const remarks=document.getElementById("remarks").value;
-            const gender=document.querySelector('input[type="radio"]:checked').value;
+            let name=document.getElementById("name").value;
+            let contact=document.getElementById("contact").value;
+            let remarks=document.getElementById("remarks").value;
+            let gender=document.querySelector('input[type="radio"]:checked').value;
 
             let course=[];
             const myCourse=document.querySelectorAll('input[type="checkbox"]:checked');
@@ -62,8 +62,15 @@
             // gender valid
             // if(!(male.checked || female.checked)){
             //     alert("choose a gender");
+            //     document.getElementById("eGender").innerHTML="gender must be selected";
+            //         return false;
+            //     }
+
+            // if(!(male.checked==true || female.checked==true)){
+            //     alert("choose a gender");
             //     return false;
             // }
+
 
             let output="Name: "+name+"<br>",
             outputC="Contact: "+contact+"<br>",

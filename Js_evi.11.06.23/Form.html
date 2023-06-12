@@ -58,23 +58,23 @@
            
             const location=document.getElementById("location").value;
 
-            // let dataM=("Name: "+ name+"<br>");
-            // dataM+=("Contact: "+contact + "<br>")
-            // dataM+=("remarks: "+remarks + "<br>")
-            // dataM+=("Gender: "+gender + "<br>")
-            // dataM+=("Course: "+subject.join(", ") + "<br>")
-            // dataM+=("Location: "+location + "<br>")
+            let dataM=("Name: "+ name+"<p>");
+            dataM+=("Contact: "+contact + "<p>")
+            dataM+=("remarks: "+remarks + "<p>")
+            dataM+=("Gender: "+gender + "<p>")
+            dataM+=("Course: "+subject.join(", ") + "<p>")
+            dataM+=("Location: "+location + "<p>")
 
-            let dataN=("Name: "+ name+"<br>"),
-            dataC=("Contact: "+contact + "<br>"),
-            dataR=("remarks: "+remarks + "<br>"),
-            dataG=("Gender: "+gender + "<br>"),
-            dataCo=("Course: "+subject.join(", ") + "<br>"),
-            dataL=("Location: "+location + "<br>");
+            // let dataN=("Name: "+ name+"<br>"),
+            // dataC=("Contact: "+contact + "<br>"),
+            // dataR=("remarks: "+remarks + "<br>"),
+            // dataG=("Gender: "+gender + "<br>"),
+            // dataCo=("Course: "+subject.join(", ") + "<br>"),
+            // dataL=("Location: "+location + "<br>");
 
             let newWindow=window.open(" ", "_blank");
-            // newWindow.document.write("<pre>"+dataM +"</pre>");
-            newWindow.document.write("<p>"+"<b>Form DATA</b>"+ "<br>" +dataN+ "<br>"+ dataC+ "<br>"+ dataR+ "<br>"+ dataG+ "<br>"+ dataCo+ "<br>"+ dataL+ "</p>");
+            newWindow.document.write("<pre>"+dataM +"</pre>");
+            // newWindow.document.write("<p>"+"<b>Form DATA</b>"+ "<br>" +dataN+ "<br>"+ dataC+ "<br>"+ dataR+ "<br>"+ dataG+ "<br>"+ dataCo+ "<br>"+ dataL+ "</p>");
         }
 
         let form=document.getElementById("myForm");

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubbleAray</title>
+</head>
+<body>
+    <script>
+        let userInput=parseInt(prompt("Enter array item NO."))
+        let arr=[];
+        for(let m=1;m<=userInput;m++){
+            let num=parseInt(prompt("Enter Number "+m));
+            arr.push(num);
+        }
+        document.write("Inputed array = " +arr+"<br>");
+//         let swapped;
+
+//   do {
+//     swapped = false;
+//     for (let i = 0; i < arr.length - 1; i++) {
+//       if (arr[i] > arr[i + 1]) {
+//         let temp = arr[i];
+//         arr[i] = arr[i + 1];
+//         arr[i + 1] = temp;
+//         swapped = true;
+//       }
+//     }
+//   } while (swapped);
+
+  for(let j=1;j<arr.length;j++){
+    for (let i = 0; i < arr.length-1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        
+      }
+    }
+  }
+    document.write("Sorted array = " +arr);
+    </script>
+</body>
+</html>

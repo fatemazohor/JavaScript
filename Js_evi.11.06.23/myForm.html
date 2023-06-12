@@ -44,10 +44,10 @@
             const remarks=document.getElementById("remarks").value;
             const location=document.getElementById("location").value;
 
-            const gender=document.querySelector('input[type="radio"]:checked').value;
+            const gender=document.querySelector('input[type=radio]:checked').value;
 
             let myCourse=[];
-            const course=document.querySelectorAll('input[type="checkbox"]:checked')
+            const course=document.querySelectorAll('input[type=checkbox]:checked')
             course.forEach(function (course){
                 myCourse.push(course.value);
             })

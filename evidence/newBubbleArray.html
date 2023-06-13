@@ -16,8 +16,8 @@
         document.write("Inputed Array = "+myArray+"<p>");
 
         // arrray sort
-        for(let i=1;i<myArray.length;i++){
-            for(let j=0;j<myArray.length-1;j++){
+        for(let i=0;i<myArray.length-1;i++){
+            for(let j=0;j<myArray.length-i-1;j++){
                 if(myArray[j]>myArray[j+1]){
                     let temp=myArray[j];
                     myArray[j]=myArray[j+1];

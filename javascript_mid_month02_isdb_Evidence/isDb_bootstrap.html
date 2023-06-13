@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assest/css/bootstrap.min.css">
+    <title>isdb_bootstrap</title>
+    <style>
+        form{
+            width: 80%;
+            margin: 10px auto;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <form id="myForm">
+        <h2>Trainee's Data Collection</h2>
+        <label for="name" class="form-label">Name</label><p></p>
+        <input type="text" name="" id="name" class="form-control"><p></p>
+        <label for="contact" class="form-label">Contact</label><p></p>
+        <input type="text" name="" id="contact" class="form-control"><p></p>
+        <label for="remarks" class="form-label">Remarks</label><p></p>
+        <textarea name="" id="remarks" cols="30" rows="3" class="form-control"></textarea><p></p>
+
+        <label for="gender" class="form-check-label">Sex</label><p></p>
+        <input type="radio" name="gender" value="Male" class="form-check-input">Male
+        <input type="radio" name="gender" value="Female" class="form-check-input">Female<p></p>
+
+        <label for="course" class="form-check-label">Courses</label><p></p>
+        <input type="checkbox" name="" value="NT" class="form-check-input"> NT
+        <input type="checkbox" name="" value="IAD" class="form-check-input"> IAD
+        <input type="checkbox" name="" value="DDD" class="form-check-input"> DDD
+        <input type="checkbox" name="" value="ESAD" class="form-check-input"> ESAD<p></p>
+
+        <label for="location" class="form-label">Location</label><p></p>
+        <select name="location" id="location" class="form-select"><p></p>
+            <option value="--Select One--">--Select One--</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option>
+        </select><p></p>
+
+        <input type="submit" value="Submit" class="btn btn-outline-success">
+    </form>
+
+    <script>
+        function dataTransfer(event){
+            event.preventDefault()
+            let name=document.getElementById("name").value;
+            let contact=document.getElementById("contact").value;
+            let remarks=document.getElementById("remarks").value;
+            let gender=document.querySelector('input[type="radio"]:checked').value;
+
+            let myCourse=[];
+            let course=document.querySelectorAll('input[type="checkbox"]:checked');
+            course.forEach(function(item){
+                myCourse.push(item.value);
+            })
+
+            let location=document.getElementById("location").value;
+
+            let output="Name: "+name+"<p>",
+             outputC="Contact: "+contact+"<p>",
+             outputR="Remarks: "+remarks+"<p>",
+             outputG="Sex: "+gender+"<p>",
+             outputCo="Courses: "+myCourse.join(",")+"<p>",
+             outputL="Location: "+location+"<p>";
+
+                let newWindow=window.open("","_blank");
+                newWindow.document.write(output+ outputC+outputR+outputG+outputCo+outputL);
+        }
+        let form=document.getElementById("myForm");
+        form.addEventListener("submit",dataTransfer)
+    </script>
+    <script src="assest/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

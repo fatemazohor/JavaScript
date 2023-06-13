@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q01</title>
+    <style>
+        form{
+            width: 50%;
+            margin: 10px auto;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+            box-shadow: -2px -1px 25px -4px #797373;
+        }
+        h2{
+            text-align: center;
+        }
+        input[type="text"],
+        textarea, select {
+            width: 100%;
+        }
+        label{
+            font-weight: 800;
+        }
+        .btn-g{
+            width: 100px;
+            padding: 5px;
+            outline: 1px solid #26e06a;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            color: #26e06a;
+            
+        }
+        .btn-g:hover{
+            background-color: #26e06a;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <h2>Trainee's Data Collection</h2>
+        <label for="name">Name</label><p></p>
+        <input type="text" name="" id="name"><p></p>
+        <label for="contact">Contact</label><p></p>
+        <input type="text" name="" id="contact"><p></p>
+        <label for="remarks">Remarks</label><p></p>
+        <textarea name="" id="remarks" cols="30" rows="3"></textarea><p></p>
+
+        <label for="gender">Sex</label><p></p>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female<p></p>
+
+        <label for="course">Courses</label><p></p>
+        <input type="checkbox" name="" value="NT">NT
+        <input type="checkbox" name="" value="IAD">IAD
+        <input type="checkbox" name="" value="DDD">DDD
+        <input type="checkbox" name="" value="ESAD">ESAD<p></p>
+
+        <label for="location">Location</label><p></p>
+        <select name="location" id="location"><p></p>
+            <option value="--Select One--">--Select One--</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option>
+        </select><p></p>
+
+        <input type="submit" value="Submit" class="btn-g">
+    </form>
+
+    <script>
+        function dataTransfer(event){
+            event.preventDefault()
+            let name=document.getElementById("name").value;
+            let contact=document.getElementById("contact").value;
+            let remarks=document.getElementById("remarks").value;
+            let gender=document.querySelector('input[type="radio"]:checked').value;
+
+            let myCourse=[];
+            let course=document.querySelectorAll('input[type="checkbox"]:checked');
+            course.forEach(function(item){
+                myCourse.push(item.value);
+            })
+
+            let location=document.getElementById("location").value;
+
+            let output="Name: "+name+"<p>",
+             outputC="Contact: "+contact+"<p>",
+             outputR="Remarks: "+remarks+"<p>",
+             outputG="Sex: "+gender+"<p>",
+             outputCo="Courses: "+myCourse.join(",")+"<p>",
+             outputL="Location: "+location+"<p>";
+
+                let newWindow=window.open("","_blank");
+                newWindow.document.write(output+ outputC+outputR+outputG+outputCo+outputL);
+        }
+        let form=document.getElementById("myForm");
+        form.addEventListener("submit",dataTransfer)
+    </script>
+</body>
+</html>
